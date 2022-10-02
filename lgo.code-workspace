@@ -60,5 +60,6 @@
 			"sml": "cd $dir && sml $fileName"
 		},
 		"go.toolsEnvVars": {"GO111MODULE": "on"},
+		"go.useLanguageServer": true
 	}
 }
