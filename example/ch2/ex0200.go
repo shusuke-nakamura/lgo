@@ -68,4 +68,125 @@ func main() {
 		fmt.Println(isAwesom)
 	}
 
+	fmt.Println("===== あふれる =====")
+	{
+		// var x byte = 1000 // エラー。たとえば1000をbyte型の変数に代入しようとするとエラーになります。
+		var x byte = 100
+		fmt.Println(x)
+	}
+
+	fmt.Println("===== 2.1.4.4　整数関連の演算子 =====")
+	{
+		var x int = 10
+		x *= 2
+		fmt.Println(x)
+	}
+
+	fmt.Println("===== 2.1.4.5　浮動小数点数型 =====")
+	{
+		var x float64 = 0
+		fmt.Println(x)
+		x += 1.333456
+		fmt.Println(x)
+
+		x = 1.5
+		var y float64 = 2.5
+		x /= y
+		fmt.Println(x)
+		// x = x % y // エラー。floatに対して「%」は使えない
+
+		fmt.Println("x/0", x/0)   // +Inf
+		fmt.Println("-x/0", -x/0) // -Inf
+	}
+
+	fmt.Println("===== 2.1.5　文字列とrune =====")
+	{
+		var a, b string
+		a = "イロハ"
+		b = "あいうえお"
+		fmt.Println(a == b)                 // false
+		fmt.Println(a != b)                 // true
+		fmt.Println(`"あ" < "い"`, "あ" < "い") // true
+		fmt.Println(`"ア" < "あ"`, "ア" < "あ") // false
+		fmt.Println("a+b:", a+b)
+	}
+
+	fmt.Println("===== 2.2 変数の宣言 =====")
+	{
+		var x, y int = 10, 20
+		fmt.Println(x, y)
+	}
+
+	{
+		var x, y int
+		fmt.Println(x, y)
+	}
+
+	{
+		var x, y = 10, "hello"
+		fmt.Println(x, y)
+	}
+
+	{
+		var (
+			x    int
+			y        = 20
+			z    int = 30
+			d, e     = 40, "hello"
+			f, g string
+		)
+		fmt.Println(x, y, z, d, e)
+		fmt.Println("f=|", f, "| g=|", g, "|")
+	}
+
+	{
+		var x = 10
+		fmt.Println(x)
+	}
+
+	{
+		x := 10
+		fmt.Println(x)
+	}
+
+	{
+		var x = 10
+		// var y int32 = x
+		var y int = x
+		fmt.Println(y)
+	}
+
+	{
+		x := 10
+		var y = 10
+		var z int64 = 10
+
+		fmt.Println(x == y)
+		// fmt.Println(x == z) //エラー x と zは型がことなる
+		fmt.Println(int64(x) == z)
+	}
+
+	fmt.Println("===== 2.4　型付きの定数と型のない定数 =====")
+	{
+		const x = 10
+		var y int = x
+		var z float64 = x
+		var d byte = x
+
+		fmt.Println("x, y, z, d", x, y, z, d)
+
+		const typedX int = 10
+		fmt.Println("typedX:", typedX)
+		fmt.Println(x == typedX)
+		// z = typedX // エラー
+		z = float64(typedX)
+		fmt.Println("z:", z)
+	}
+
+	{ // 2.5　使われない変数
+		x := 10
+		x = 20
+		fmt.Println(x)
+		x = 30
+	}
 }
