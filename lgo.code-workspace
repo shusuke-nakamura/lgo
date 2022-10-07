@@ -4,9 +4,17 @@
 			"path": "."
 		},
 		{
+			"path": "example/ch1",
+			"name": "example_ch1"
+		},
+		{
 			"path": "example/ch2",
 			"name": "example_ch2"
-		}
+		},
+		{
+			"path": "example/ch3",
+			"name": "example_ch3"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
