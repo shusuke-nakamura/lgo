@@ -2,6 +2,10 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "example/ch2",
+			"name": "example_ch2"
 		}
 	],
 	"settings": {
