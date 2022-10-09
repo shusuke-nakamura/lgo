@@ -84,4 +84,86 @@ func main() {
 		fmt.Println("x == nil:", x == nil)
 		fmt.Println("y !=nil:", y != nil)
 	}
+
+	fmt.Println("===== 3.2.1 len =====")
+	{
+		var x = []int{1, 5: 4, 6, 10: 100, 15}
+		fmt.Println("len(x):", len(x))
+		var y = []int{}
+		fmt.Println("len(y):", len(y))
+	}
+
+	fmt.Println("----- スライスのスライス -----")
+	{
+		var x [][]int
+		fmt.Println(x)
+
+		var y = [][]int{{0, 1}, {2, 3}, {4, 5}}
+		fmt.Println(y)
+		fmt.Println(y[1])
+		fmt.Println(y[1][1])
+	}
+
+	fmt.Println("----- lenの引数 -----")
+	{
+		var x [][]int
+		fmt.Println("len(x):", len(x))
+		var y = []int{2, 3, 4, 5}
+		fmt.Println("len(y):", len(y))
+		var z string = "abc"
+		fmt.Println("len(z):", len(z))
+
+		var a = 12
+		fmt.Println("a:", a)
+		// fmt.Println(len(a)) // エラー
+	}
+
+	fmt.Println("===== 3.2.2　append =====")
+	{
+		var x []int
+		fmt.Println(x)
+		x = append(x, 10)
+		fmt.Println("append(x, 10):", x)
+	}
+
+	{
+		var x = []int{1, 2, 3}
+		x = append(x, 4)
+		fmt.Println("append(x, 4):", x)
+		x = append(x, 5, 6, 7)
+		fmt.Println("append(x, 5, 6, 7):", x)
+
+		y := []int{20, 30, 40}
+		x = append(x, y...)
+		fmt.Println("x:", x)
+		fmt.Println("append(x, y...):", append(x, y...))
+		// append(x, y) // エラー
+	}
+
+	fmt.Println("===== 3.2.4　make =====")
+	{
+		x := make([]int, 5)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+		fmt.Println("x[0], x[4]:", x[0], x[4])
+	}
+	{
+		x := make([]int, 5)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+		x = append(x, 10)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+	}
+	fmt.Println("----- キャパシティ（第3引数）を指定 -----")
+	{
+		x := make([]int, 5, 10)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+	}
+	{
+		x := make([]int, 0, 10)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+	}
+	{
+		x := make([]int, 0, 10)
+		x = append(x, 5, 6, 7, 8)
+		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
+	}
 }
