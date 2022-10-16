@@ -73,6 +73,18 @@
 		},
 		"go.toolsEnvVars": {"GO111MODULE": "on"},
 		"go.useLanguageServer": true,
-		"editor.suggest.snippetsPreventQuickSuggestions": false
+		"[go]" : {
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true,
+			},
+			"editor.snippetSuggestions": "none"
+		},
+		"gopls": {
+			"ui.documentation.hoverKind": "SynopsisDocumentation",
+			"ui.completion.usePlaceholders": true,
+			"ui.documentation.linkTarget": "pkg.go.dev",
+			"ui.diagnostic.staticcheck": false,
+		},
 	}
 }

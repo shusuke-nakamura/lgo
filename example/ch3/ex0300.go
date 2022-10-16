@@ -166,4 +166,89 @@ func main() {
 		x = append(x, 5, 6, 7, 8)
 		fmt.Println("x, len(x), cap(x):", x, len(x), cap(x))
 	}
+
+	fmt.Println("===== 3.2.5　スライスの生成方法の選択 =====")
+	{
+		var data []int
+		fmt.Println(data, len(data), cap(data))
+		fmt.Println("data == nil:", data == nil)
+
+		var x = []int{}
+		fmt.Println(x, len(x), cap(x))
+		fmt.Println("x == nil:", x == nil)
+	}
+	{
+		data := []int{2, 4, 6, 8}
+		fmt.Println(data, len(data), cap(data))
+	}
+
+	fmt.Println("===== 3.3　文字列、rune、バイト =====")
+	{
+		var s string = "Hello there"
+		var b byte = s[6]
+		fmt.Println(b)
+		fmt.Printf("printfで指定:%c\n", b)
+		var c rune = rune(s[6])
+		fmt.Println(c)
+		fmt.Printf("printfで指定:%c\n", c)
+	}
+
+	fmt.Println("----- 文字列に対する「スライス式」 -----")
+	{
+		var s string = "Hello there"
+		fmt.Println("s:", s)
+		var s2 string = s[4:7]
+		var s3 string = s[:5]
+		var s4 string = s[6:]
+		fmt.Printf("s2:%s\ns3:%s\ns4:%s\n", s2, s3, s4)
+	}
+
+	fmt.Println("----- 絵文字 -----")
+	{
+		var s string = "Hello ☀"
+		var s2 string = s[4:7]
+		var s3 string = s[:5]
+		var s4 string = s[6:]
+		fmt.Println(s)
+		fmt.Println(s2)
+		fmt.Println(s3)
+		fmt.Println(s4)
+		fmt.Println("len(s):", len(s))
+	}
+
+	fmt.Println("----- 日本語 -----")
+	{
+		var s string = "こんにちは"
+		fmt.Println("s:", s)
+		fmt.Println("s[0]:", s[0])
+		var b byte = s[6]
+		fmt.Println("b:", b)
+		var c rune = rune(s[6])
+		fmt.Println("c:", c)
+	}
+
+	{
+		var s string = "こんにちは、みなさん"
+		var s2 string = s[4:7]
+		var s3 string = s[:5]
+		var s4 string = s[6:]
+		fmt.Println("s:", s)
+		fmt.Println("s2:", s2)
+		fmt.Println("s3:", s3)
+		fmt.Println("s4:", s4)
+	}
+
+	{
+		var a rune = 'x'
+		var s string = string(a)
+		var b byte = 'y'
+		var s2 string = string(b)
+		fmt.Println("a, s, b, s2:", a, s, b, s2)
+	}
+
+	{
+		var x int = 65
+		var y = string(x)
+		fmt.Println("y:", y) // A （65ではない）
+	}
 }
