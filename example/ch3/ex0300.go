@@ -251,4 +251,100 @@ func main() {
 		var y = string(x)
 		fmt.Println("y:", y) // A （65ではない）
 	}
+
+	fmt.Println("===== 3.4　マップ =====")
+	{
+		var nilMap map[string]int
+		fmt.Println("nilMap == nil", nilMap == nil)
+		fmt.Println("len(nilMap):", len(nilMap))
+		fmt.Println("nilMap[\"abc\"]", nilMap["abc"])
+		// nilMap["abc"] = 3 // ←パニックになる
+
+		totalWins := map[string]int{}
+		fmt.Println("totalWins == nil:", totalWins == nil)
+		fmt.Println("totalWins[\"abc\"]", totalWins["abc"])
+		totalWins["abc"] = 3
+		fmt.Println("totalWins[\"abc\"]", totalWins["abc"])
+	}
+	{
+		totalWins := map[string]int{
+			"ゼネターズ":  14,
+			"スパローズ":  15,
+			"ファルコンズ": 22,
+		}
+		fmt.Println(totalWins)
+	}
+	{
+		teams := map[string][]string{
+			"ライターズ":    []string{"夏目", "森", "国木田"},
+			"ナイツ":      []string{"武田", "徳川", "明智"},
+			"ミュージシャンズ": []string{"ラベル", "ベートーベン", "リスト"},
+		}
+		fmt.Println(teams)
+		fmt.Println(teams["ライターズ"])
+		fmt.Println(teams["ロビンズ"])
+
+		/*
+			teams := map[string][]string {
+				"Orcas": []string{"Fred", "Ralph", "Bijou"},
+				"Lions": []string{"Sarah", "Peter", "Billie"},
+				"Kittens": []string{"Waldo", "Raul", "Ze"},
+			}
+
+			fmt.Println(teams) // map[Kittens:[Waldo Raul Ze] Lions:[Sarah Peter Billie] Orcas:[Fred Ralph Bijou]]
+			fmt.Println(teams["Lions"]) // [Sarah Peter Billie]
+			fmt.Println(teams["Kittens"]) // [Waldo Raul Ze]
+		*/
+
+		teams2 := map[string][]string{
+			"シャチチーム":  []string{"謙信", "信長", "家康"},
+			"ライオンチーム": []string{"レオ", "たか子", "カナ"},
+			"猫チーム":    []string{"AKB", "MNB", "FNB"},
+		}
+		fmt.Println(teams2)
+		fmt.Println(teams2["シャチチーム"])
+		fmt.Println(teams2["チャチチーム"])
+		fmt.Println(teams2["猫チーム"])
+
+		fmt.Println("len(teams2[\"猫チーム\"]):", len(teams2["猫チーム"]))
+	}
+
+	{
+		ages := make(map[int][]string, 10)
+		fmt.Println("ages:", ages)
+		fmt.Println("len(ages):", len(ages))
+	}
+
+	fmt.Println("===== 3.4.2　カンマOKイディオム =====")
+	{
+		m := map[string]int{
+			"hello": 5,
+			"world": 0,
+		}
+		v, ok := m["hello"]
+		fmt.Println(v, ok)
+
+		v, ok = m["world"]
+		fmt.Println(v, ok)
+
+		v, ok = m["goodbye"]
+		fmt.Println(v, ok)
+	}
+
+	fmt.Println("===== 3.4.3 マップからの削除 =====")
+	{
+		m := map[string]int{
+			"hello": 5,
+			"world": 0,
+		}
+		fmt.Println(m)
+		v, ok := m["hello"]
+		fmt.Println(v, ok)
+		delete(m, "hello")
+		fmt.Println(m)
+		v, ok = m["hello"]
+		fmt.Println(v, ok)
+		delete(m, "こんにちは")
+		fmt.Println(m)
+	}
 }
