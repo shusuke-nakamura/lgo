@@ -347,4 +347,140 @@ func main() {
 		delete(m, "こんにちは")
 		fmt.Println(m)
 	}
+
+	fmt.Println("===== 3.5　構造体 =====")
+	{
+		type person struct {
+			name string
+			age  int
+			pet  string
+		}
+
+		var fred person
+		fmt.Println("fred:", fred)
+
+		bob := person{}
+		fmt.Println("bob:", bob)
+		bob.name = "ボブ"
+		fmt.Println("bob:", bob)
+
+		julia := person{
+			"Julia",
+			40,
+			"cat",
+		}
+		fmt.Println("julia:", julia)
+
+		/* コンパイルエラー(全てフィールドを指定する必要がある)
+		fred := person{
+			"フレッド",
+			"cat",
+		}
+		*/
+
+		beth := person{
+			age:  30,
+			name: "ベス",
+		}
+		fmt.Println("beth:", beth)
+
+		fmt.Println("bob.name:", bob.name)
+		fmt.Println("bob:", bob)
+	}
+
+	fmt.Println("===== 3.5.1　無名構造体 =====")
+	var person struct {
+		name string
+		age  int
+		pet  string
+	}
+
+	person.name = "bob"
+	person.age = 50
+	person.pet = "dog"
+	fmt.Println("person:", person)
+
+	pet := struct {
+		name string
+		kind string
+	}{
+		name: "ポチ",
+		kind: "dog",
+	}
+	fmt.Println("pet:", pet)
+
+	fmt.Println("===== 3.5.2　構造体の比較と変換 =====")
+	{
+		type firstPerson struct {
+			name string
+			age  int
+		}
+
+		type secondPerson struct {
+			name string
+			age  int
+		}
+
+		type thirdPerson struct {
+			age  int
+			name string
+		}
+
+		x1 := firstPerson{
+			"太郎",
+			24,
+		}
+		fmt.Println("x1:", x1)
+
+		var x2 secondPerson
+		x2 = secondPerson(x1)
+		fmt.Println("x2:", x2)
+		// fmt.Println("x1==x2:", x1 == x2)
+		x12 := firstPerson(x2)
+		fmt.Println("x1==x12", x1 == x12)
+
+		var x3 thirdPerson
+		// x3 = thirdPerson(x1)
+		fmt.Println("x3:", x3)
+
+		type fourthPerson struct {
+			firstName string
+			age       int
+		}
+
+		var x4 fourthPerson
+		// x4 = fourthPerson(x1)
+		fmt.Println("x4:", x4)
+
+		type fifthPerson struct {
+			name          string
+			age           int
+			favoriteColor string
+		}
+		var x5 fifthPerson
+		// x5 = fifthPerson(x1)
+		fmt.Println("x5:", x5)
+	}
+
+	fmt.Println("\n----- 無名構造体との変換 -----")
+	{
+		type firstPerson struct {
+			name string
+			age  int
+		}
+		f := firstPerson{
+			name: "Bob",
+			age:  50,
+		}
+		var g struct {
+			name string
+			age  int
+		}
+		fmt.Println("f:", f)
+		fmt.Println("g:", g)
+		g = f
+		fmt.Println("g(fの代入後):", g)
+		fmt.Println("f==g", f == g)
+	}
+
 }
