@@ -31,6 +31,10 @@
 			"path": "example/ch7",
 			"name": "example_ch7"
 		},
+		{
+			"path": "example/ch8",
+			"name": "example_ch8"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
