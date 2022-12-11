@@ -43,6 +43,18 @@
 			"path": "example/ch9/package_example",
 			"name": "example_ch9_package_example"
 		},
+		{
+			"path": "example/ch9/godoc_example",
+			"name": "example_ch9_godoc_example"
+		},
+		{
+			"path": "example/ch9/godoc_example-jpn",
+			"name": "example_ch9_godoc_example-jpn"
+		},
+		{
+			"path": "example/ch9/internal_example",
+			"name": "example_ch9_internal_example"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
