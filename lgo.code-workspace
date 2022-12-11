@@ -55,6 +55,10 @@
 			"path": "example/ch9/internal_example",
 			"name": "example_ch9_internal_example"
 		},
+		{
+			"path": "example/ch9/circular_dependency_example",
+			"name": "example_ch9_circular_dependency_example"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
