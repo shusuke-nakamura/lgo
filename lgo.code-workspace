@@ -39,6 +39,10 @@
 			"path": "example/ch9",
 			"name": "example_ch9"
 		},
+		{
+			"path": "example/ch9/package_example",
+			"name": "example_ch9_package_example"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
