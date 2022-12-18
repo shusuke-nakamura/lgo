@@ -41,3 +41,6 @@ go list -m -versions github.com/learning-go-book/simpletax
 go get 
 (例)
 go get github.com/learning-go-book/simpletax@v1.0.0
+
+◇ pkg.go.devサイト
+https://pkg.go.dev/
