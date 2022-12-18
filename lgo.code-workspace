@@ -75,6 +75,10 @@
 			"path": "example/ch9/region_tax",
 			"name": "example_ch9_region_tax"
 		},
+		{
+			"path": "example/ch9/region_tax2",
+			"name": "example_ch9_region_tax2"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,
