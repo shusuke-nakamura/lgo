@@ -67,6 +67,14 @@
 			"path": "example/ch9/ex0902",
 			"name": "example_ch9_ex0902"
 		},
+		{
+			"path": "example/ch9/importing-third-party-code",
+			"name": "example_ch9_importing-third-party-code"
+		},
+		{
+			"path": "example/ch9/region_tax",
+			"name": "example_ch9_region_tax"
+		},
 	],
 	"settings": {
 		"code-runner.runInTerminal": true,

@@ -29,3 +29,15 @@ module-root/
 |    |---- package3.go
 |---- main.go
 
+◇ モジュール
+・利用可能なバージョンを確認するコマンド
+【コマンド】
+go list
+(例)
+go list -m -versions github.com/learning-go-book/simpletax
+
+・依存関係にあるモジュールのバージョン変更
+【コマンド】
+go get 
+(例)
+go get github.com/learning-go-book/simpletax@v1.0.0
